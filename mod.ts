@@ -18,12 +18,12 @@ import {
   serializeURL,
 } from "./src/handlers/mod.ts";
 import { assert } from "@std/assert";
-import type { DeserializeOptions, SerializeOptions } from "./src/interfaces/mod.ts";
+import type { DeserializeOptions, SerializedClass, SerializeOptions } from "./src/interfaces/mod.ts";
 import type { AtLeastOneOf, DeserializeFunction, SerializerFunction } from "./src/types/mod.ts";
 import { SerializableClass } from "./src/abstractions/mod.ts";
 
 export { Database, isSerializableClass, ReadableStack, registerClass, SerializableClass, WritableStack };
-export type { AtLeastOneOf, DeserializeFunction, DeserializeOptions, SerializeOptions, SerializerFunction };
+export type { AtLeastOneOf, DeserializeFunction, DeserializeOptions, SerializedClass, SerializeOptions, SerializerFunction };
 
 const SERIALIZERS: SerializerFunction[] = [
   serializeDate,
