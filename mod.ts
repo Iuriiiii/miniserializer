@@ -41,45 +41,53 @@ const DESERIALIZERS: DeserializeFunction[] = [
   deserializeURL,
 ];
 
-export function serialize(value: unknown): Uint8Array {
+export interface ISerializeOptions {
+  serializers: SerializerFunction[];
+}
+
+export function serialize(value: unknown, options?: Partial<ISerializeOptions>): Uint8Array {
   const stack = new WritableStack();
   const objectDatabase = new Database<object>();
   const arrayDatabase = new Database<unknown[]>();
   const stringDatabase = new Database<string>();
 
-  const options: SerializeOptions = {
+  const unknownOptions: SerializeOptions = {
     stack,
     objectDatabase,
     arrayDatabase,
     stringDatabase,
-    serializers: SERIALIZERS,
+    serializers: SERIALIZERS.concat(options?.serializers ?? []),
   };
 
   // Version
   stack.pushNumber(1);
 
-  unknownSerializer(value, options);
+  unknownSerializer(value, unknownOptions);
 
   return new Uint8Array(stack.buffer.slice(0, stack.byteOffset));
 }
 
-export function deserialize<T = unknown>(buffer: Uint8Array): T {
+export interface IDeserializeOptions {
+  deserializers: DeserializeFunction[];
+}
+
+export function deserialize<T = unknown>(buffer: Uint8Array, options?: Partial<IDeserializeOptions>): T {
   const stack = new ReadableStack(buffer);
   const objectDatabase = new Database<object>();
   const arrayDatabase = new Database<unknown[]>();
   const stringDatabase = new Database<string>();
 
-  const options: DeserializeOptions = {
+  const unkownOptions: DeserializeOptions = {
     stack,
     objectDatabase,
     arrayDatabase,
     stringDatabase,
-    deserializers: DESERIALIZERS,
+    deserializers: DESERIALIZERS.concat(options?.deserializers ?? []),
   };
 
   const version = stack.popNumber();
 
   assert(version === 1, "Unable to unpack. Invalid version.");
 
-  return unknownDeserializer(options) as T;
+  return unknownDeserializer(unkownOptions) as T;
 }
