@@ -1,5 +1,4 @@
 import { Opcode } from "../enums/opcode.enum.ts";
-import type { UnsafeAny } from "../types/mod.ts";
 
 export class ReadableStack {
   private offset = 0;
@@ -96,43 +95,4 @@ export class ReadableStack {
         throw new Error(`Unsupported number opcode: ${opcode}`);
     }
   }
-
-  // public read(): UnsafeAny {
-  //   const opcode = this.popOpcode();
-
-  //   switch (opcode) {
-  //     case Opcode.TRUE:
-  //       return true;
-  //     case Opcode.FALSE:
-  //       return false;
-  //     case Opcode.NULL:
-  //       return null;
-  //     case Opcode.UNDEFINED:
-  //       return undefined;
-  //     case Opcode.NAN:
-  //       return NaN;
-  //     case Opcode.INFINITY:
-  //       return Infinity;
-  //     case Opcode.NEGATIVE_INFINITY:
-  //       return -Infinity;
-  //     case Opcode.I8:
-  //     case Opcode.U8:
-  //     case Opcode.I16:
-  //     case Opcode.U16:
-  //     case Opcode.I32:
-  //     case Opcode.U32:
-  //     case Opcode.F32:
-  //     case Opcode.F64:
-  //     case Opcode.BIGINT:
-  //       return this.popNumber(opcode);
-  //     case Opcode.STRING:
-  //       return this.popString();
-  //     case Opcode.REFERENCE:
-  //       return this.dataView.getUint8(this.offset++);
-  //     case Opcode.STRING_REFERENCE:
-  //       return this.dataView.getUint8(this.offset++);
-  //     default:
-  //       throw new Error(`Unknown opcode: ${opcode}`);
-  //   }
-  // }
 }

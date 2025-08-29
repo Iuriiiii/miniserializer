@@ -1,6 +1,6 @@
 import type { SerializableClass } from "../abstractions/mod.ts";
 import type { SerializedClass } from "../interfaces/mod.ts";
-import type { AtLeastOneOf, UnsafeAny } from "../types/mod.ts";
+import type { UnsafeAny } from "../types/mod.ts";
 
 export function classToObject(clazz: SerializableClass) {
   if ("serialize" in clazz && clazz.serialize instanceof Function) {

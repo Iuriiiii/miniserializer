@@ -1,6 +1,4 @@
-import { Opcode } from "../enums/mod.ts";
-import { DeserializeOptions } from "../interfaces/mod.ts";
-import { unknownDeserializer } from "./unknown.deserializer.ts";
+import type { DeserializeOptions } from "../interfaces/mod.ts";
 
 export function regexDeserializer(options: DeserializeOptions) {
   const { stack } = options;

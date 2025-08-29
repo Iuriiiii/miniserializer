@@ -1,8 +1,8 @@
+import type { UnsafeAny } from "../types/mod.ts";
+import type { SerializeOptions } from "../interfaces/mod.ts";
 import { Opcode } from "../enums/mod.ts";
-import { SerializeOptions } from "../interfaces/mod.ts";
 import { hasReference } from "./utils/has-reference.util.ts";
 import { unknownSerializer } from "./unknown.serializer.ts";
-import type { UnsafeAny } from "../types/mod.ts";
 
 export function objectSerializer(
   value: UnsafeAny,

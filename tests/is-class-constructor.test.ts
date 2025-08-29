@@ -84,5 +84,5 @@ Deno.test("isClassConstructor should return false for instances of classes", () 
   const instance = new MyClass();
   assertEquals(isClassConstructor(instance), false);
   assertEquals(isClassConstructor(new Object()), false);
-  assertEquals(isClassConstructor(new Array()), false);
+  assertEquals(isClassConstructor(new Array(5)), false);
 });

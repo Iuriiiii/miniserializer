@@ -1,5 +1,5 @@
+import type { DeserializeOptions } from "../interfaces/mod.ts";
 import { Opcode } from "../enums/mod.ts";
-import { DeserializeOptions } from "../interfaces/mod.ts";
 import { arrayDeserializer } from "./array.deserializer.ts";
 import { classDeserializer } from "./class.deserializer.ts";
 import { constructorDeserializer } from "./constructor.deserializer.ts";

@@ -1,5 +1,5 @@
+import type { SerializeOptions } from "../interfaces/mod.ts";
 import { Opcode } from "../enums/mod.ts";
-import { SerializeOptions } from "../interfaces/mod.ts";
 import { unknownSerializer } from "./unknown.serializer.ts";
 import { hasReference } from "./utils/has-reference.util.ts";
 

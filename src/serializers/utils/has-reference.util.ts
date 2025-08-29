@@ -1,6 +1,6 @@
+import type { UnsafeAny } from "../../types/mod.ts";
+import type { SerializeOptions } from "../../interfaces/mod.ts";
 import { Opcode } from "../../enums/mod.ts";
-import { SerializeOptions } from "../../interfaces/mod.ts";
-import { UnsafeAny } from "../../types/mod.ts";
 
 export function hasReference(value: UnsafeAny, options: SerializeOptions) {
   const { stack, objectDatabase } = options;

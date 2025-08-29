@@ -1,3 +1,4 @@
+import type { WritableStack } from "../classes/mod.ts";
 import {
   isArray,
   isBigInt,
@@ -14,14 +15,12 @@ import {
 } from "@online/is";
 import type { SerializeOptions } from "../interfaces/mod.ts";
 import { Opcode } from "../enums/mod.ts";
-import { WritableStack } from "../classes/mod.ts";
 import { objectSerializer } from "./object.serializer.ts";
 import { arraySerializer } from "./array.serializer.ts";
 import { regexSerializer } from "./regex.serializer.ts";
 import { isClassConstructor, isSerializableClass } from "../validators/mod.ts";
 import { classSerializer } from "./class.serializer.ts";
 import { stringSerializer } from "./string.serializer.ts";
-import type { UnsafeAny } from "../types/mod.ts";
 import { constructorSerializer } from "./constructor.serializer.ts";
 
 export function unknownSerializer(
@@ -36,6 +35,7 @@ export function unknownSerializer(
       break;
     case isNaN(value):
       stack.pushOpcode(Opcode.NAN);
+      break;
     case isInfinity(value):
       if (value < 0) {
         stack.pushOpcode(Opcode.NEGATIVE_INFINITY);

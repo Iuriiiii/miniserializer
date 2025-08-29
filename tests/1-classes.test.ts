@@ -1,12 +1,12 @@
+import type { UnsafeAny } from "../src/types/unsafe-any.type.ts";
+import type { AtLeastOneOf } from "../src/types/mod.ts";
+import type { SerializedClass } from "../src/interfaces/mod.ts";
 import { assertEqual, test } from "@inspatial/test";
 import { unknownDeserializer } from "../src/deserializers/unknown.deserializer.ts";
 import { unknownSerializer } from "../src/serializers/unknown.serializer.ts";
 import { Database, ReadableStack, WritableStack } from "../src/classes/mod.ts";
 import { SerializableClass } from "../src/abstractions/mod.ts";
 import { registerClass } from "../src/utils/mod.ts";
-import { SerializedClass } from "../src/interfaces/mod.ts";
-import { AtLeastOneOf } from "../src/types/mod.ts";
-import { UnsafeAny } from "../src/types/unsafe-any.type.ts";
 
 class User extends SerializableClass {
   public isOld!: boolean;

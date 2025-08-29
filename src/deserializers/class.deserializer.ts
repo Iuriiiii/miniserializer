@@ -1,5 +1,5 @@
-import { DeserializeOptions, SerializedClass } from "../interfaces/mod.ts";
-import { UnsafeAny } from "../types/mod.ts";
+import type { DeserializeOptions, SerializedClass } from "../interfaces/mod.ts";
+import type { UnsafeAny } from "../types/mod.ts";
 import { getClassConstructor } from "../utils/mod.ts";
 import { objectDeserializer } from "./object.deserializer.ts";
 import { assert } from "@std/assert";

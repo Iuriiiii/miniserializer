@@ -1,7 +1,5 @@
-import { DataType, Opcode } from "../enums/mod.ts";
 import type { DeserializeOptions, SerializeOptions } from "../interfaces/mod.ts";
-import { unknownSerializer } from "../serializers/unknown.serializer.ts";
-import { unknownDeserializer } from "../deserializers/unknown.deserializer.ts";
+import { DataType, Opcode } from "../enums/mod.ts";
 import { isUndefined } from "@online/is";
 
 export function serializeError(value: Error, options: SerializeOptions) {

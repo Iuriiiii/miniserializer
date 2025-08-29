@@ -35,7 +35,7 @@ export class WritableStack {
     this.offset += value.byteLength;
   }
 
-  public pushNumber(value: number | bigint) {
+  public pushNumber(value: number | bigint): void {
     if (isBigInt(value)) {
       this.pushOpcode(Opcode.BIGINT);
       this.dataView.getBigUint64(this.offset, false);
@@ -98,11 +98,11 @@ export class WritableStack {
     }
   }
 
-  public pushOpcode(opcode: Opcode) {
+  public pushOpcode(opcode: Opcode): void {
     this.dataView.setUint8(this.offset++, opcode);
   }
 
-  public push(opcode: Opcode, value: UnsafeAny) {
+  public push(opcode: Opcode, value: UnsafeAny): void {
     this.dataView.setUint8(this.offset++, opcode);
 
     switch (opcode) {

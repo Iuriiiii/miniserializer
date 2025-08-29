@@ -1,16 +1,12 @@
+import type { DeserializeOptions, SerializedClass, SerializeOptions } from "../src/interfaces/mod.ts";
+import type { UnsafeAny } from "../src/types/mod.ts";
 import { assert, assertEquals, assertStrictEquals } from "@std/assert";
 import { unknownSerializer } from "../src/serializers/unknown.serializer.ts";
 import { unknownDeserializer } from "../src/deserializers/unknown.deserializer.ts";
 import { WritableStack } from "../src/classes/writable-stack.class.ts";
 import { ReadableStack } from "../src/classes/readable-stack.class.ts";
 import { Database } from "../src/classes/database.util.ts";
-import {
-  DeserializeOptions,
-  SerializedClass,
-  SerializeOptions,
-} from "../src/interfaces/mod.ts";
 import { registerClass } from "../src/utils/mod.ts";
-import type { UnsafeAny } from "../src/types/mod.ts";
 import { SerializableClass } from "../src/abstractions/mod.ts";
 
 Deno.test("unknownSerializer and unknownDeserializer should handle null", () => {

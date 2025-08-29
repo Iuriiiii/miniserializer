@@ -1,5 +1,5 @@
+import type { SerializeOptions } from "../interfaces/mod.ts";
 import { Opcode } from "../enums/mod.ts";
-import { SerializeOptions } from "../interfaces/mod.ts";
 
 export function regexSerializer(value: RegExp, options: SerializeOptions) {
   const { stack } = options;

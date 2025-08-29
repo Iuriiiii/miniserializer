@@ -10,8 +10,7 @@ function randomNumber(min: number, max: number) {
 function randomString(length: number) {
   let result = "";
 
-  const characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZÁÉÍÓÚÑabcdefghijklmnopqrstuvwxyzáéíóúñ0123456789_!@#$%^&*()";
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZÁÉÍÓÚÑabcdefghijklmnopqrstuvwxyzáéíóúñ0123456789_!@#$%^&*()";
   const charactersLength = characters.length;
   for (let i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -105,7 +104,7 @@ const valuesToTest = [
 test("Native values", () => {
   for (const valueToTest of valuesToTest) {
     try {
-      const stack = new WritableStack(1024*1024);
+      const stack = new WritableStack(1024 * 1024);
       const objectDatabase = new Database<object>();
       const stringDatabase = new Database<string>();
       const arrayDatabase = new Database<Array<unknown>>();

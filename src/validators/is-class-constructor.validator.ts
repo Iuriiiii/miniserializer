@@ -5,7 +5,7 @@ export function isClassConstructor(value: unknown): value is Constructor {
     return false;
   }
 
-  const proto = (value as any).prototype;
+  const proto = (value as UnsafeAny).prototype;
   const stringified = value.toString();
   return !!proto && !!proto.constructor && proto.constructor === value &&
     (stringified.startsWith("class") || stringified.endsWith("{ [native code] }"));

@@ -5,8 +5,7 @@ import type { ReadableStack } from "../classes/mod.ts";
 /**
  * Options for deserializing
  */
-export interface DeserializeOptions
-  extends Omit<SerializeOptions, "serializers" | "stack"> {
+export interface DeserializeOptions extends Omit<SerializeOptions, "serializers" | "stack"> {
   /**
    * All custom deserializers.
    */

@@ -42,7 +42,12 @@ Deno.test("serialize and deserialize should handle Set objects", () => {
   assert(deserialized.has("value1"));
   assert(deserialized.has(123));
   assert(deserialized.has(true));
-  assert(Array.from(deserialized).some(item => item instanceof Date && (item as Date).getTime() === (Array.from(originalSet).find(item => item instanceof Date) as Date).getTime()));
+  assert(
+    Array.from(deserialized).some((item) =>
+      item instanceof Date &&
+      (item as Date).getTime() === (Array.from(originalSet).find((item) => item instanceof Date) as Date).getTime()
+    ),
+  );
 });
 
 Deno.test("serialize and deserialize should handle RegExp objects", () => {
