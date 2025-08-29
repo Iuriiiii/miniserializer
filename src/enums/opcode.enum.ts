@@ -1,0 +1,38 @@
+export enum Opcode {
+  I8 = 0,
+  U8,
+  I16,
+  U16,
+  I32,
+  U32,
+  I64,
+  U64,
+  F32,
+  F64,
+
+  BIGINT,
+  WSTRING,
+  STRING,
+  OBJECT,
+  END_OBJECT,
+  ARRAY,
+  END_ARRAY,
+
+  TRUE,
+  FALSE,
+  NULL,
+  INFINITY,
+  NEGATIVE_INFINITY,
+  NAN,
+  UNDEFINED,
+
+  REFERENCE,
+  STRING_REFERENCE,
+
+  MEMBER,
+  CLASS,
+  REGEX,
+  CONSTRUCTOR,
+
+  CUSTOM = 100,
+}

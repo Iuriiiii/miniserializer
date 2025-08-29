@@ -1,0 +1,16 @@
+{
+  "name": "@online/miniserializer",
+  "version": "0.0.1",
+  "exports": "./mod.ts",
+  "tasks": {},
+  "imports": {
+    "@inspatial/test": "jsr:@inspatial/test@^0.1.1",
+    "@online/is": "jsr:@online/is@^0.0.x",
+    "@std/assert": "jsr:@std/assert@^1.0.9"
+  },
+  "compilerOptions": {},
+  "nodeModulesDir": "auto",
+  "fmt": {
+    "lineWidth": 130
+  }
+}
