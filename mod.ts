@@ -22,7 +22,7 @@ import type { DeserializeFunction, SerializerFunction } from "./src/types/mod.ts
 import { assert } from "@std/assert";
 
 export { Database, isSerializableClass, ReadableStack, registerClass, WritableStack };
-export type { DeserializeOptions, SerializeOptions };
+export type { DeserializeFunction, DeserializeOptions, SerializeOptions, SerializerFunction };
 
 const SERIALIZERS: SerializerFunction[] = [
   serializeDate,
